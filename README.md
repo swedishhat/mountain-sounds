@@ -1,5 +1,5 @@
 #MOUNTAIN SOUNDS!
-##By Patrick Lloyd and Heather Martin
+###By Patrick Lloyd and Heather Martin
 
 This Matlab script makes beautiful, screechy music from pictures of mountains (and maybe trees).
 
@@ -9,8 +9,8 @@ It uses im2bw() to convert a greyscale image to a binary one which requires the 
 
 TODO:
 * Allow script to generate sound without any image preprocessing
-** Perform edge detection with Sobel filter or something
-** Trace upper and lower boundary with bwtraceboundary() or bwboundaries()
+1. Perform edge detection with Sobel filter or something
+2. Trace upper and lower boundary with bwtraceboundary() or bwboundaries()
 
 * Remove wavwrite() and replace it with soundwrite()
 
