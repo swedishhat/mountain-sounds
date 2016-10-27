@@ -98,13 +98,13 @@ paths[-1][1]['lat'] + lat_step
 print('Collecting '+ str(last_chunk_samples)+ ' samples for the final coordinate pair:')
 print(paths[-1])
 
-sys.exit()
-
+#sys.exit()
+# Flatten the elevations list
+flat_elevations_json = [item for sublist in elevations for item in sublist]
 with open('elevations.json', 'w') as elev_file:
-    # Flatten the elevations list
-    # [item for sublist in l for item in sublist]
-    flat_elevations = [item for sublist in elevations for item in sublist]
-    json.dump(flat_elevations, elev_file, sort_keys=True, indent=4)
-
+    json.dump(flat_elevations_json, elev_file, sort_keys=True, indent=4)
     elev_file.close()
 
+# Parse the JSON to just get the float values of the elevations list
+flat_elevations = flat_elevations_json[:]['elevation']
+print(flat_elevations)
