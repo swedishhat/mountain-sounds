@@ -1,17 +1,20 @@
-#MOUNTAIN SOUNDS!
-###By Patrick Lloyd and Heather Martin
+# Mountain Sounds
 
-This Matlab script makes beautiful, screechy music from pictures of mountains (and maybe trees).
+This is a proof of concept Python program that uses the Google Maps APIs to make bautiful, screechy music from the elevations collected from the path between two points. You need to get an API key from Google to make this work and enable geocoding and elevation. 
 
-It works like an optical soundtrack decoder where the frequency information is embedded in the distance between the top and bottom white pixels in each column. All the example sounds and 'greyscale_mountain.bmp' are made from mountain6.jpg in the 'landscapes' folder.
+# Process
+The script collects a few basics from the user:
+* Start address (geocoded to produce lat/lng)
+* End address (geocoded to produce lat/lng)
+* Total time of produced sound file
+* "Sampling rate" (i.e. number of elevation data points per second)
 
-It uses im2bw() to convert a greyscale image to a binary one which requires the image processing toolbox. You can use a program like Gimp or Photoshop (or even MS Paint) to generate the binary image if you don't have that toolbox.
+The script then gathers all the necessary points, normalizes them from -1 to 1, packages it into a .WAV file and then saves the result. 
 
-TODO:
-* Allow script to generate sound without any image preprocessing
-1. Perform edge detection with Sobel filter or something
-2. Trace upper and lower boundary with bwtraceboundary() or bwboundaries()
-
-* Remove wavwrite() and replace it with soundwrite()
-
-* Make script in basic Matlab syntax so that people using Octave or who don't have any toolboxes can run it.
+# TODO
+* API key entry
+* Better error checking
+* Graph points
+* Make sounds
+* GUI
+* Refactor with functions and classes
