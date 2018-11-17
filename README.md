@@ -12,6 +12,7 @@ The script collects a few basics from the user:
 The script then gathers all the necessary points, normalizes them from -1 to 1, packages it into a .WAV file and then saves the result. 
 
 # TODO
+* Rewrite in javascript -- still use google API, add things like graph.js
 * API key entry
 * Better error checking
 * Graph points
